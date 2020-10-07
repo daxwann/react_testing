@@ -1,5 +1,26 @@
+@font-face {
+  font-family: 'OpenSans';
+  src: local('OpenSans'), url(./assets/fonts/OpenSans/OpenSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: bold;
+  src: local('OpenSans'), url(./assets/fonts/OpenSans/OpenSans-Bold.ttf) format('truetype');
+}
+
 body {
   margin: 0;
   padding: 0;
   background: #707174;
+  font-family: OpenSans, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.main-section {
+  width: 100%;
+  margin: 20px auto 80px;
+  padding: 0 10px;
+  max-width: 980px;
 }
