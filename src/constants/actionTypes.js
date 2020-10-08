@@ -1,0 +1,5 @@
+export const POSTS = {
+  GET: 'GET_POSTS',
+  GET_SUCCESS: 'GET_POSTS_SUCCESS',
+  GET_FAIL: 'GET_POSTS_FAIL'
+}
