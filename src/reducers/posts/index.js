@@ -1,5 +1,3 @@
-import { types } from "node-sass";
-
 import { POSTS } from '../../constants/actionTypes';
 
 export default (state=[], action) => {
