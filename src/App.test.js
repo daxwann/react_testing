@@ -35,4 +35,18 @@ describe("App component", () => {
     const appComponent = findByTestAttr(component, 'appComponent');
     expect(appComponent.length).toBe(1);
   })
+
+  it('should update isBtnHidden when toggleBtn method is called', () => {
+    const classInstance = component.instance();
+    const oldState = classInstance.state.isBtnHidden;
+    classInstance.toggleBtn();
+    const newState = classInstance.state.isBtnHidden;
+    expect(newState).not.toBe(oldState);
+  })
+
+  it('should return a number when method is called', () => {
+    const classInstance = component.instance();
+    const newValue = classInstance.methodReturnsValue(4);
+    expect(newValue).toBe(5);
+  })
 })

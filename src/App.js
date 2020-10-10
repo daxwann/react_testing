@@ -15,18 +15,37 @@ const tempArr = [{
   onlineStatus: true
 }];
 
+const initialState = {
+  isBtnHidden: false
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.fetch = this.fetch.bind(this);
+    this.state = {...initialState};
   }
 
   fetch() {
     this.props.fetchPosts();
+    this.toggleBtn();
+  }
+
+  toggleBtn() {
+    const { isBtnHidden } = this.state;
+
+    this.setState({
+      isBtnHidden: !isBtnHidden
+    })
+  }
+
+  methodReturnsValue(number) {
+    return number + 1;
   }
 
   render() {
     const { posts } = this.props;
+    const { isBtnHidden } = this.state;
 
     const configButton = {
       buttonText: 'Get posts',
@@ -38,7 +57,7 @@ class App extends Component {
         <Header />
         <section className="main-section">
           <Headline header="Posts" desc="Click the button to render posts" tempArr={tempArr} />
-          <SharedButton {...configButton} />
+          {!isBtnHidden && <SharedButton {...configButton} />}
           {posts.length > 0 &&
             <div>
               {posts.map((post, index) => {
